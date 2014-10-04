@@ -32,9 +32,7 @@ static NSString *const oauthURL = @"http://oauth.vk.com/authorize?client_id=%@&s
     if ([response rangeOfString:@"access_token"].location != NSNotFound) {
         NSArray *data = [response componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"=&"]];
         [_accountsManager addUserWithId:[data[5] integerValue] andAccessToken:data[1]];
-        [self dismissViewControllerAnimated:YES completion:^{
-
-        }];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

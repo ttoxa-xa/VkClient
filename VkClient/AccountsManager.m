@@ -7,7 +7,6 @@
 #import "AFNetworking.h"
 #import "User.h"
 #import "LoginViewController.h"
-#import "News.h"
 
 
 @interface AccountsManager ()
@@ -61,9 +60,7 @@ static NSString *const accessTokenKey = @"token";
             userData[accessTokenKey] = token;
             [self userDataReceived:userData];
         }
-    }     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
-    }];
+    }     failure:nil];
 }
 
 - (void)userDataReceived:(NSDictionary *)userData {

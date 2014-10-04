@@ -11,8 +11,6 @@
 #import "News.h"
 #import "Picture.h"
 
-static NSString *const reuseIdentifier = @"imageCell";
-
 @interface NewsDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -22,6 +20,8 @@ static NSString *const reuseIdentifier = @"imageCell";
 @end
 
 @implementation NewsDetailsViewController
+
+static NSString *const reuseIdentifier = @"imageCell";
 
 - (void)viewDidLoad
 {
