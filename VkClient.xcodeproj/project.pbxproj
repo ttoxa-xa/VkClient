@@ -21,6 +21,7 @@
 		EA4C1D8F198FA07D008B7ED3 /* LoggedUserDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA4C1D8D198FA07D008B7ED3 /* LoggedUserDataModel.xcdatamodeld */; };
 		EA6EB6C019CEB54C00D4C780 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EB6BF19CEB54C00D4C780 /* ImageCell.m */; };
 		EA6EB6C319CEB8CB00D4C780 /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EB6C219CEB8CB00D4C780 /* NewsDetailsViewController.m */; };
+		EA71720319E1B573007A8210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA71720219E1B572007A8210 /* Images.xcassets */; };
 		EAA2993819A75994003E2FB8 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA2993719A75994003E2FB8 /* NewsCell.m */; };
 		EAC3F9541989638900FCA24E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC3F9531989638900FCA24E /* Foundation.framework */; };
 		EAC3F9561989638900FCA24E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC3F9551989638900FCA24E /* CoreGraphics.framework */; };
@@ -30,7 +31,6 @@
 		EAC3F9641989638900FCA24E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC3F9631989638900FCA24E /* AppDelegate.m */; };
 		EAC3F9671989638900FCA24E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC3F9651989638900FCA24E /* Main.storyboard */; };
 		EAC3F96A1989638900FCA24E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC3F9691989638900FCA24E /* LoginViewController.m */; };
-		EAC3F96C1989638900FCA24E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC3F96B1989638900FCA24E /* Images.xcassets */; };
 		EAC3F9731989638900FCA24E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC3F9721989638900FCA24E /* XCTest.framework */; };
 		EAC3F9741989638900FCA24E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC3F9531989638900FCA24E /* Foundation.framework */; };
 		EAC3F9751989638900FCA24E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC3F9571989638900FCA24E /* UIKit.framework */; };
@@ -76,6 +76,7 @@
 		EA6EB6BF19CEB54C00D4C780 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		EA6EB6C119CEB8CB00D4C780 /* NewsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailsViewController.h; sourceTree = "<group>"; };
 		EA6EB6C219CEB8CB00D4C780 /* NewsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsViewController.m; sourceTree = "<group>"; };
+		EA71720219E1B572007A8210 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EAA2993619A75994003E2FB8 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		EAA2993719A75994003E2FB8 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		EAC3F9501989638900FCA24E /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +92,6 @@
 		EAC3F9661989638900FCA24E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAC3F9681989638900FCA24E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EAC3F9691989638900FCA24E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		EAC3F96B1989638900FCA24E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EAC3F9711989638900FCA24E /* VkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC3F9721989638900FCA24E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EAC3F97A1989638900FCA24E /* VkClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VkClientTests-Info.plist"; sourceTree = "<group>"; };
@@ -209,14 +209,14 @@
 				EA18198619A7C050008DAB2E /* NewsViewController.m */,
 				EAC3F9681989638900FCA24E /* LoginViewController.h */,
 				EAC3F9691989638900FCA24E /* LoginViewController.m */,
-				EAC3F96B1989638900FCA24E /* Images.xcassets */,
-				EAC3F95A1989638900FCA24E /* Supporting Files */,
 				1852957F52F0851CBA7DDE4D /* OauthViewController.m */,
 				1852992AAAD236E81D7EBA29 /* OauthViewController.h */,
 				18529F177ACD9FE79D1EF98D /* AccountsManager.m */,
 				185298E4A3AD51475F60C754 /* AccountsManager.h */,
 				18529BC8A627C226E83D10BC /* NewsManager.h */,
 				18529E931C16179EBDD32E56 /* NewsManager.m */,
+				EA71720219E1B572007A8210 /* Images.xcassets */,
+				EAC3F95A1989638900FCA24E /* Supporting Files */,
 			);
 			path = VkClient;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAC3F96C1989638900FCA24E /* Images.xcassets in Resources */,
+				EA71720319E1B573007A8210 /* Images.xcassets in Resources */,
 				EAC3F95E1989638900FCA24E /* InfoPlist.strings in Resources */,
 				EAC3F9671989638900FCA24E /* Main.storyboard in Resources */,
 			);

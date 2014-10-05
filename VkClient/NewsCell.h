@@ -18,11 +18,9 @@
 @property(strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *attachedImagesContraints;
 
 - (void)hideImageViews;
-
 - (void)setAttachedImageWithPictureData:(NSData *)pictureData andNumber:(NSUInteger)pictureNumber;
-
+- (void)setPlaceholderImage:(UIImage *)image;
 - (void)setAvatarWithData:(NSData *)avatarData;
-
 - (void)setImageViewsHeight:(CGFloat)height;
 
 @end

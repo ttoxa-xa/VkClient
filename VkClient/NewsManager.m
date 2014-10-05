@@ -178,6 +178,8 @@ NSString *const pictureNumberKey = @"pictureNumber";
     }
 }
 
+#pragma mark pictures loading
+
 - (void)loadAvatarFromProfileOrGroup:(NSDictionary *)info toNews:(News *)news {
     Picture *avatar = [Picture createEntity];
     [avatar loadImageFromURL:[NSURL URLWithString:info[avatarUrlKey]] withCompetition:^{        //load image async
@@ -203,7 +205,7 @@ NSString *const pictureNumberKey = @"pictureNumber";
 
             Picture *picture = [Picture createEntity];
 
-            [picture loadImageFromURL:[NSURL URLWithString:pictureInfo[photoUrlKey]] withCompetition:^{   //load image async
+            [picture loadImageFromURL:[NSURL URLWithString:pictureInfo[photoUrlKey]] withCompetition:^{                        //load image async
                 if (picture.pictureData) {
                     [news addPicturesObject:picture];
                     [self sendPictureDataToNewsController:picture.pictureData withNumberOfNews:@([self.news indexOfObject:news]) andNumberOfPicture:@(i)];
@@ -214,10 +216,11 @@ NSString *const pictureNumberKey = @"pictureNumber";
 
 }
 
+
 - (void)sendAvatarDataToNewsController:(NSData *)avatarData withNumberOdNews:(NSNumber *)newsNumber {
     NSDictionary *pictureInfo = @{
             attachmentPhotoKey : avatarData,
-            newsNumberKey : newsNumber,
+            newsNumberKey : newsNumber
     };
 
     [[NSNotificationCenter defaultCenter] postNotificationName:avatarLoadedNotificationName object:nil userInfo:pictureInfo];

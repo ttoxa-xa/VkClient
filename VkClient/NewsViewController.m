@@ -24,6 +24,7 @@
 
 static CGFloat const imageViewSize = 107;
 static CGFloat const endScrollingHeight = 50.0;
+static NSString *const placeholderImageName = @"placeholder";
 static NSString *const cellIdentifier = @"News";
 NSString *const newsLoadedNotificationName = @"newsLoaded";
 NSString *const pictureLoadedNotificationName = @"pictureLoaded";
@@ -73,6 +74,9 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     NSArray *attachedImageViews = newsCell.attachedImages;                                         //set images in cell if needed
     if (news.hasPictureValue) {
         NSArray *attachedPictures = [news.pictures allObjects];
+        if (attachedPictures.count == 0){
+            [newsCell setPlaceholderImage:[UIImage imageNamed:placeholderImageName]];
+        }
         for (NSUInteger i = 0; i < attachedImageViews.count && i < attachedPictures.count; i++) {
             Picture *attachedPicture = attachedPictures[i];
             [newsCell setAttachedImageWithPictureData:attachedPicture.pictureData andNumber:i];

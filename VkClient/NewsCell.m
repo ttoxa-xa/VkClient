@@ -24,7 +24,6 @@
 
 - (void)hideImageViews {
     for (UIImageView *imageView in _attachedImages) {
-        imageView.image = nil;
         imageView.hidden = YES;
     }
 }
@@ -32,6 +31,12 @@
 - (void)setAttachedImageWithPictureData:(NSData *)pictureData andNumber:(NSUInteger)pictureNumber {
     UIImageView *imageView = self.attachedImages[pictureNumber];
     imageView.image = [UIImage imageWithData:pictureData];
+    imageView.hidden = NO;
+}
+
+- (void)setPlaceholderImage:(UIImage *)image {
+    UIImageView *imageView = self.attachedImages[0];
+    imageView.image = image;
     imageView.hidden = NO;
 }
 
