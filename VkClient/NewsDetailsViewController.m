@@ -12,10 +12,10 @@
 #import "Picture.h"
 
 @interface NewsDetailsViewController ()
-@property (weak, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-@property (weak, nonatomic) IBOutlet UILabel *ownersNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *newsTextLabel;
+@property(weak, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
+@property(weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property(weak, nonatomic) IBOutlet UILabel *ownersNameLabel;
+@property(weak, nonatomic) IBOutlet UILabel *newsTextLabel;
 
 @end
 
@@ -23,16 +23,14 @@
 
 static NSString *const reuseIdentifier = @"imageCell";
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     _newsTextLabel.text = _news.text;
     _avatarImageView.image = [UIImage imageWithData:_news.avatar.pictureData];
     _ownersNameLabel.text = _news.ownersName;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

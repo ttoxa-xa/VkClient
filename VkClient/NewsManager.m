@@ -118,7 +118,7 @@ NSString *const pictureNumberKey = @"pictureNumber";
 
             [[NSNotificationCenter defaultCenter] postNotificationName:newsLoadedNotificationName object:nil];
         }
-    }  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:newsLoadedNotificationName object:nil];
     }];
 }
@@ -131,8 +131,8 @@ NSString *const pictureNumberKey = @"pictureNumber";
     return NO;
 }
 
-- (void)removeOldNewsIfNeeded{
-    while (self.news.count > newsCount){
+- (void)removeOldNewsIfNeeded {
+    while (self.news.count > newsCount) {
         [_user removeNewsObject:_news.lastObject];
 
         _newsHaveChanges = YES;
@@ -178,11 +178,10 @@ NSString *const pictureNumberKey = @"pictureNumber";
     }
 }
 
-- (void)loadAvatarFromProfileOrGroup:(NSDictionary *)info toNews:(News *)news{
-    NSURL *avatarUrl = [NSURL URLWithString:info[avatarUrlKey]];
+- (void)loadAvatarFromProfileOrGroup:(NSDictionary *)info toNews:(News *)news {
     Picture *avatar = [Picture createEntity];
     [avatar loadImageFromURL:[NSURL URLWithString:info[avatarUrlKey]] withCompetition:^{        //load image async
-        if (avatar.pictureData){
+        if (avatar.pictureData) {
             [news setAvatar:avatar];
             [self sendAvatarDataToNewsController:avatar.pictureData withNumberOdNews:@([self.news indexOfObject:news])];
         }
@@ -215,7 +214,7 @@ NSString *const pictureNumberKey = @"pictureNumber";
 
 }
 
-- (void)sendAvatarDataToNewsController:(NSData *)avatarData withNumberOdNews:(NSNumber *)newsNumber{
+- (void)sendAvatarDataToNewsController:(NSData *)avatarData withNumberOdNews:(NSNumber *)newsNumber {
     NSDictionary *pictureInfo = @{
             attachmentPhotoKey : avatarData,
             newsNumberKey : newsNumber,

@@ -85,11 +85,11 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     return newsCell;
 }
 
-- (void)configureBasicCell:(NewsCell *)cell withNews:(News *)news{
+- (void)configureBasicCell:(NewsCell *)cell withNews:(News *)news {
     cell.nameLabel.text = news.ownersName;
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd:MM:yyyy"];
+    [dateFormatter setDateFormat:@"dd.MM.yyyy"];
     cell.dateLabel.text = [dateFormatter stringFromDate:news.date];
 
     cell.newsTextLabel.text = news.text;
@@ -98,7 +98,7 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     if (![news hasPicture]) {
         [cell setImageViewsHeight:0];
     }
-    else{
+    else {
         [cell setImageViewsHeight:imageViewSize];
     }
 }
@@ -108,7 +108,7 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
 
     static dispatch_once_t onceToken;
     static NewsCell *sizingCell;
-    dispatch_once(&onceToken, ^(){
+    dispatch_once(&onceToken, ^() {
         sizingCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     });
     [sizingCell hideImageViews];
@@ -131,8 +131,8 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
 
 - (void)pictureLoaded:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
-    int pictureNumber = [(NSNumber *)info[pictureNumberKey] intValue];
-    int newsNumber = [(NSNumber *)info[newsNumberKey] intValue];
+    int pictureNumber = [(NSNumber *) info[pictureNumberKey] intValue];
+    int newsNumber = [(NSNumber *) info[newsNumberKey] intValue];
     NSData *pictureData = info[attachmentPhotoKey];
 
     NewsCell *newsCell = (NewsCell *) [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:newsNumber inSection:0]];
@@ -145,9 +145,9 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     }
 }
 
-- (void)avatarLoaded:(NSNotification *)notification{
+- (void)avatarLoaded:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
-    int newsNumber = [(NSNumber *)info[newsNumberKey] intValue];
+    int newsNumber = [(NSNumber *) info[newsNumberKey] intValue];
     NSData *pictureData = info[attachmentPhotoKey];
 
     NewsCell *newsCell = (NewsCell *) [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:newsNumber inSection:0]];
@@ -162,20 +162,20 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat scrollingHeight = scrollView.frame.size.height + scrollView.contentOffset.y;
-    if (scrollingHeight > scrollView.contentSize.height + endScrollingHeight){
-        if (!self.tableView.tableFooterView){
+    if (scrollingHeight > scrollView.contentSize.height + endScrollingHeight) {
+        if (!self.tableView.tableFooterView) {
             [self addFooterView];
         }
-        [(UIActivityIndicatorView *)self.tableView.tableFooterView startAnimating];
+        [(UIActivityIndicatorView *) self.tableView.tableFooterView startAnimating];
     }
-    else if (scrollingHeight < scrollView.contentSize.height){
+    else if (scrollingHeight < scrollView.contentSize.height) {
         [self removeFooterView];
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     CGFloat scrollingHeight = scrollView.frame.size.height + scrollView.contentOffset.y;
-    if (scrollingHeight > scrollView.contentSize.height + endScrollingHeight){
+    if (scrollingHeight > scrollView.contentSize.height + endScrollingHeight) {
         [self loadOldNews];
     }
 }
@@ -187,17 +187,17 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     [_newsManager requestUsersNews];
 }
 
-- (void)loadOldNews{
+- (void)loadOldNews {
     [_newsManager requestUsersOldNews];
 }
 
-- (void)addFooterView{
+- (void)addFooterView {
     UIActivityIndicatorView *footer = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 0, 50)];
     footer.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     self.tableView.tableFooterView = footer;
 }
 
-- (void)removeFooterView{
+- (void)removeFooterView {
     [self.tableView.tableFooterView removeFromSuperview];
     self.tableView.tableFooterView = nil;
 }

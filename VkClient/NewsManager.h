@@ -17,7 +17,9 @@ extern NSString *const pictureNumberKey;
 @property(atomic, strong, readonly) NSArray *news;
 
 - (NewsManager *)initWithUser:(User *)user;
+
 - (void)requestUsersNews;
+
 - (void)requestUsersOldNews;
 
 @end

@@ -22,25 +22,25 @@
     return self;
 }
 
-- (void)hideImageViews{
-    for(UIImageView *imageView in _attachedImages) {
+- (void)hideImageViews {
+    for (UIImageView *imageView in _attachedImages) {
         imageView.image = nil;
         imageView.hidden = YES;
     }
 }
 
-- (void)setAttachedImageWithPictureData:(NSData *)pictureData andNumber:(NSUInteger)pictureNumber{
+- (void)setAttachedImageWithPictureData:(NSData *)pictureData andNumber:(NSUInteger)pictureNumber {
     UIImageView *imageView = self.attachedImages[pictureNumber];
     imageView.image = [UIImage imageWithData:pictureData];
     imageView.hidden = NO;
 }
 
-- (void)setAvatarWithData:(NSData *)avatarData{
+- (void)setAvatarWithData:(NSData *)avatarData {
     UIImageView *imageView = self.ownersPhotoView;
     imageView.image = [UIImage imageWithData:avatarData];
 }
 
-- (void)setImageViewsHeight:(CGFloat)height{
+- (void)setImageViewsHeight:(CGFloat)height {
     for (NSLayoutConstraint *imageConstraint in _attachedImagesContraints) {
         imageConstraint.constant = height;
     }

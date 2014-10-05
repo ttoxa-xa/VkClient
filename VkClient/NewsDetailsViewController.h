@@ -10,8 +10,8 @@
 
 @class News;
 
-@interface NewsDetailsViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface NewsDetailsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property(nonatomic, strong)News *news;
+@property(nonatomic, strong) News *news;
 
 @end

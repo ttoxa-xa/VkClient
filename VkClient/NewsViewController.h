@@ -14,7 +14,7 @@ extern NSString *const avatarLoadedNotificationName;
 
 @class User;
 
-@interface NewsViewController : UITableViewController<UIScrollViewDelegate>
+@interface NewsViewController : UITableViewController <UIScrollViewDelegate>
 
 @property(nonatomic, strong) User *user;
 
