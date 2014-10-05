@@ -16,6 +16,7 @@
 @property(weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property(weak, nonatomic) IBOutlet UILabel *ownersNameLabel;
 @property(weak, nonatomic) IBOutlet UILabel *newsTextLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imagesCollectionViewHeight;
 
 @end
 
@@ -28,6 +29,9 @@ static NSString *const reuseIdentifier = @"imageCell";
     _newsTextLabel.text = _news.text;
     _avatarImageView.image = [UIImage imageWithData:_news.avatar.pictureData];
     _ownersNameLabel.text = _news.ownersName;
+    if (![_news hasPictureValue]){
+        _imagesCollectionViewHeight.constant = 0.0;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
