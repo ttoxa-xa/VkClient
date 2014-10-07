@@ -31,9 +31,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me1-pL-pKh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me1-pL-pKh">
                                 <rect key="frame" x="105" y="65" width="95" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="2xT-L9-qGG"/>
+                                </constraints>
                                 <state key="normal" title="Login with VK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,7 +44,7 @@
                                     <segue destination="3BC-RH-Kel" kind="modal" id="T5p-Bh-sCZ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="i74-mb-WoP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="i74-mb-WoP">
                                 <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,6 +74,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="i74-mb-WoP" secondAttribute="trailing" id="FAi-Kg-nfM"/>
+                            <constraint firstItem="i74-mb-WoP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="FAo-sO-FwR"/>
+                            <constraint firstAttribute="trailing" secondItem="me1-pL-pKh" secondAttribute="trailing" constant="120" id="Kim-PB-16O"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="i74-mb-WoP" secondAttribute="bottom" id="XrR-8p-JHf"/>
+                            <constraint firstItem="i74-mb-WoP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="36" id="dob-Ml-9XT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="me1-pL-pKh" secondAttribute="bottom" constant="464" id="f4o-8I-2gB"/>
+                            <constraint firstItem="me1-pL-pKh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="105" id="h0Q-G4-nQ5"/>
+                            <constraint firstItem="me1-pL-pKh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="1" id="iRp-87-jTP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3hB-C3-gib"/>
                     <connections>
@@ -305,7 +318,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ldm-dN-3Oe" firstAttribute="top" secondItem="JcP-d5-giE" secondAttribute="bottom" constant="8" id="0Jj-vF-zXR"/>
                                             <constraint firstItem="uv9-QW-XZ1" firstAttribute="leading" secondItem="0DO-Yz-HKv" secondAttribute="leading" id="4WN-LU-VhS"/>
@@ -326,6 +339,7 @@
                                 <constraints>
                                     <constraint firstItem="0DO-Yz-HKv" firstAttribute="top" secondItem="j4H-VN-2re" secondAttribute="top" id="4VX-VI-XMv"/>
                                     <constraint firstItem="0DO-Yz-HKv" firstAttribute="leading" secondItem="j4H-VN-2re" secondAttribute="leading" id="Wqe-f0-y0v"/>
+                                    <constraint firstAttribute="centerX" secondItem="0DO-Yz-HKv" secondAttribute="centerX" id="e8E-hx-67H"/>
                                     <constraint firstAttribute="trailing" secondItem="0DO-Yz-HKv" secondAttribute="trailing" id="qZQ-6e-uHP"/>
                                     <constraint firstAttribute="bottom" secondItem="0DO-Yz-HKv" secondAttribute="bottom" id="xdb-Jl-RNv"/>
                                 </constraints>
