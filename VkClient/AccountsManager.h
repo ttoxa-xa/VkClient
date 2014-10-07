@@ -7,6 +7,8 @@
 
 @class User;
 
+extern NSString *const userKey;
+
 @interface AccountsManager : NSObject
 
 @property(nonatomic, strong) User *currentUser;

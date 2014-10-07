@@ -28,7 +28,7 @@ static NSString *const segueId = @"toNews";
 - (void)viewDidLoad {
     [super viewDidLoad];
     _accountsManager = [[AccountsManager alloc] init];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didCoreDataUpdated) name:newUserAddedNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didCoreDataUpdated:) name:newUserAddedNotificationName object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,8 +95,9 @@ static NSString *const segueId = @"toNews";
 
 #pragma mark observer method
 
-- (void)didCoreDataUpdated {
+- (void)didCoreDataUpdated:(NSNotification *)notification {
     [_tableView reloadData];
+    [self performSegueWithIdentifier:segueId sender:self];
 }
 
 @end

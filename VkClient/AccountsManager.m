@@ -20,6 +20,7 @@
 static NSString *const vkRequestURL = @"https://api.vk.com/method/";
 static NSString *const getUserInfoFunc = @"users.get";
 static NSString *const accessTokenKey = @"token";
+NSString *const userKey = @"user";
 
 - (AccountsManager *)init {
     self = [super init];
@@ -31,21 +32,13 @@ static NSString *const accessTokenKey = @"token";
     return self;
 }
 
-/*- (AccountsManager *)initWithUserId:(int)Id andAccessToken:(NSString *)token{
-    self = [self init];
-    if (self){
-        [self addUserWithId:Id andAccessToken:token];
+- (BOOL)userAlreadyExists:(int)userId{
+    for (User *user in _users) {
+        if ([(NSNumber *) user.uid intValue] == userId)
+            return YES;
     }
-    return self;
+    return NO;
 }
-
-- (AccountsManager *)initWithUser:(User *)user{
-    self = [self init];
-    if (self){
-        _currentUser = user;
-    }
-    return self;
-}*/
 
 - (void)addUserWithId:(int)Id andAccessToken:(NSString *)token {
     NSDictionary *parameters = @{@"user_id" : @(Id),
@@ -64,11 +57,14 @@ static NSString *const accessTokenKey = @"token";
 }
 
 - (void)userDataReceived:(NSDictionary *)userData {
-    _currentUser = [User importFromObject:userData];
-    [_users addObject:_currentUser];
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:newUserAddedNotificationName object:nil];
-    }];
+    User *loggedUser = [User importFromObject:userData];
+    if (![self userAlreadyExists:loggedUser.uidValue]) {
+        _currentUser = loggedUser;
+        [_users addObject:_currentUser];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:newUserAddedNotificationName object:nil userInfo:nil];
+        }];
+    }
 }
 
 - (NSMutableArray *)users {
