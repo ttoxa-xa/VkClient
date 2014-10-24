@@ -299,9 +299,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Anton;
 				TargetAttributes = {
-					EAC3F94F1989638900FCA24E = {
-						DevelopmentTeam = GVQ7CYUYR7;
-					};
 					EAC3F9701989638900FCA24E = {
 						TestTargetID = EAC3F94F1989638900FCA24E;
 					};
@@ -529,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VkClient/VkClient-Prefix.pch";
 				INFOPLIST_FILE = "VkClient/VkClient-Info.plist";
@@ -545,7 +542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VkClient/VkClient-Prefix.pch";
 				INFOPLIST_FILE = "VkClient/VkClient-Info.plist";

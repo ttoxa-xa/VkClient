@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:VkClient/Images.xcassets"
-      name = "Images.xcassets">
-      <Group
-         location = "group:AppIcon.appiconset"
-         name = "AppIcon.appiconset">
-         <FileRef
-            location = "group:Contents.json">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:LaunchImage.launchimage"
-         name = "LaunchImage.launchimage">
-         <FileRef
-            location = "group:Contents.json">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:New Folder"
-         name = "New Folder">
-      </Group>
-   </Group>
    <FileRef
       location = "group:VkClient.xcodeproj">
    </FileRef>
