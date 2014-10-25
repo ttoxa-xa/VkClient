@@ -42,6 +42,11 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(avatarLoaded:) name:avatarLoadedNotificationName object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -169,6 +174,7 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
     if (scrollingHeight > scrollView.contentSize.height + endScrollingHeight) {
         if (!self.tableView.tableFooterView) {
             [self addFooterView];
+            [self loadOldNews];
         }
         [(UIActivityIndicatorView *) self.tableView.tableFooterView startAnimating];
     }
@@ -176,14 +182,6 @@ NSString *const avatarLoadedNotificationName = @"avatarLoaded";
         [self removeFooterView];
     }
 }
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    CGFloat scrollingHeight = scrollView.frame.size.height + scrollView.contentOffset.y;
-    if (scrollingHeight > scrollView.contentSize.height + endScrollingHeight) {
-        [self loadOldNews];
-    }
-}
-
 
 #pragma mark pull-to-refresh
 
